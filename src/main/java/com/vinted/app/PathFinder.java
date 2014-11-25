@@ -51,7 +51,7 @@ public class PathFinder {
 	public List<Path> getPaths(String from, String to, int maxSteps) {
 		List<Path> result = new ArrayList<Path>();
 		Path path = new Path();
-		tripFinderByMaxSteps(result, path, from, to, 0, maxSteps);
+		tripFinderByMaxSteps(result, path, from, to, maxSteps);
 		return result;	
 	}
 	
@@ -67,11 +67,10 @@ public class PathFinder {
 	 *            from node name
 	 * @param to
 	 *            to node name
-	 * @param currentStep
 	 * @param maxSteps
 	 */
-	private void tripFinderByMaxSteps(List<Path> result, Path path, String from, String to, int currentStep, int maxSteps) {
-		if (currentStep > maxSteps) {
+	private void tripFinderByMaxSteps(List<Path> result, Path path, String from, String to, int maxSteps) {
+		if (path.size() > maxSteps) {
 			return;
 		}
 		
@@ -86,10 +85,9 @@ public class PathFinder {
 		
 		path.add(node);
 		for (String link : node.getLinks().keySet()) {
-			tripFinderByMaxSteps(result, path, link, to, currentStep + 1, maxSteps);
+			tripFinderByMaxSteps(result, path, link, to, maxSteps);
 		}
 		path.pop();
-
 	}
 	
 	/**
