@@ -16,7 +16,7 @@ public class PathFinderTest {
     @Before
     public void setUp() {
     	try {
-			graph = Graph.buildGraph("AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7");
+			graph = Graph.buildGraph("AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7, FG1, GF1");
 			pathFinder = new PathFinder(graph);
 		} catch (GraphException e) {
 			throw new Error(e);
@@ -90,5 +90,7 @@ public class PathFinderTest {
 	public void testShortestRoute() {
 		assertEquals(9, pathFinder.shortestPath("A", "C").getPathLength());
 		assertEquals(9, pathFinder.shortestPath("B", "B").getPathLength());		
+		assertEquals(null, pathFinder.shortestPath("A", "F"));
+		
 	}
 }
