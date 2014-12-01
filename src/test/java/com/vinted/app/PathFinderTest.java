@@ -12,59 +12,59 @@ public class PathFinderTest {
 	
 	private PathFinder pathFinder;
 
-	
-    @Before
-    public void setUp() {
-    	try {
-			graph = Graph.buildGraph("AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7, FG1, GF1");
+	@Before
+	public void setUp() {
+		try {
+			graph = Graph
+					.buildGraph("AB5, BC4, CD8, DC8, DE6, AD5, CE2, EB3, AE7, FG1, GF1");
 			pathFinder = new PathFinder(graph);
 		} catch (GraphException e) {
 			throw new Error(e);
 		}
-    }
-	
-    @Test
-    public void testInvalidInput() {
-    	try {
-    		Graph.buildGraph("AA");
-    		fail();
-    	} catch (GraphException e) {	
-    	}
-    	
-    	try {
-    		Graph.buildGraph("AA-10");
-    		fail();
-    	} catch (GraphException e) {
-    	}
-    	
-    	try {
+	}
+
+	@Test
+	public void testInvalidInput() {
+		try {
+			Graph.buildGraph("AA");
+			fail();
+		} catch (GraphException e) {
+		}
+
+		try {
+			Graph.buildGraph("AA-10");
+			fail();
+		} catch (GraphException e) {
+		}
+
+		try {
 			Graph.buildGraph("AA5");
 			fail();
 		} catch (GraphException e) {
 		}
-    	
-    	try {
+
+		try {
 			Graph.buildGraph("AB5, AB6");
 			fail();
 		} catch (GraphException e) {
 		}
-    	
-    	try {
-    		Graph.buildGraph("ABC");
-    		fail();
-    	} catch (GraphException e) {
-    		
-    	}
-    	
-    	try {
-    		Graph.buildGraph("AB1");
-    		fail();
-    	} catch (GraphException e) {
-    	}
-    }
-    
+
+		try {
+			Graph.buildGraph("ABC");
+			fail();
+		} catch (GraphException e) {
+
+		}
+
+		try {
+			Graph.buildGraph("AB1");
+			fail();
+		} catch (GraphException e) {
+		}
+	}
+
 	@Test
-	public void testPathLength() throws NoPathException {		
+	public void testPathLength() throws NoPathException {
 		assertEquals(0, pathFinder.findPathLength("A"));
 		assertEquals(9, pathFinder.findPathLength("A-B-C"));
 		assertEquals(5, pathFinder.findPathLength("A-D"));
@@ -89,7 +89,7 @@ public class PathFinderTest {
 	@Test
 	public void testShortestRoute() {
 		assertEquals(9, pathFinder.shortestPath("A", "C").getPathLength());
-		assertEquals(9, pathFinder.shortestPath("B", "B").getPathLength());		
+		assertEquals(9, pathFinder.shortestPath("B", "B").getPathLength());
 		assertEquals(null, pathFinder.shortestPath("A", "F"));
 		
 	}
