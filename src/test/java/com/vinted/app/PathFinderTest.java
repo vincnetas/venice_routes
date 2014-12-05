@@ -6,6 +6,9 @@ import static org.junit.Assert.fail;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.vinted.app.domain.Graph;
+import com.vinted.app.domain.GraphException;
+
 public class PathFinderTest {
 
 	private Graph graph;

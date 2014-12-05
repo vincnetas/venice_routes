@@ -4,6 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+import com.vinted.app.domain.Graph;
+import com.vinted.app.domain.GraphException;
+
 public class Main {
 
 	public static void main(String[] args) {

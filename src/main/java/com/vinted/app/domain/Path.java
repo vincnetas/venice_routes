@@ -1,4 +1,4 @@
-package com.vinted.app;
+package com.vinted.app.domain;
 
 import java.util.ArrayList;
 import java.util.List;

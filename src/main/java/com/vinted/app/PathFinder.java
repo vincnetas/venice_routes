@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import com.vinted.app.domain.Graph;
+import com.vinted.app.domain.Node;
+import com.vinted.app.domain.Path;
+
 public class PathFinder {
 
 	private Graph graph;

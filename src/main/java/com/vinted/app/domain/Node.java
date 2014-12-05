@@ -1,4 +1,4 @@
-package com.vinted.app;
+package com.vinted.app.domain;
 
 import java.util.HashMap;
 import java.util.Map;
