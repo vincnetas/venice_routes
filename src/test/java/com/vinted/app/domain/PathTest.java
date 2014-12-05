@@ -5,7 +5,6 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.vinted.app.domain.Graph;
-import com.vinted.app.domain.GraphException;
 import com.vinted.app.domain.Node;
 import com.vinted.app.domain.Path;
 import com.vinted.app.domain.PathException;
@@ -20,7 +19,7 @@ public class PathTest {
 		Node b = new Node("B", graph);
 		Node c = new Node("C", graph);
 		Node d = new Node("D", graph);
-
+		
 		a.addLink("B", 10);
 		b.addLink("C", 10);
 		c.addLink("D", 10);
@@ -41,7 +40,7 @@ public class PathTest {
 		newPath.pop();
 		
 		assertEquals(20, newPath.getPathLength());
-
+		
 		try {
 			path.add(a);
 			fail("Non neighbor added to graph");

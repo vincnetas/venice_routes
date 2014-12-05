@@ -56,7 +56,7 @@ public class PathFinder {
 		List<Path> result = new ArrayList<Path>();
 		Path path = new Path();
 		tripFinderByMaxSteps(result, path, from, to, maxSteps);
-		return result;	
+		return result;
 	}
 	
 	/**

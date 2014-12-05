@@ -25,14 +25,14 @@ public class Node {
 	public void addLink(String toName, int length) {
 		links.put(toName, length);
 	}
-
+	
 	/**
 	 * @return the name
 	 */
 	public String getName() {
 		return name;
 	}
-
+	
 	/**
 	 * @return the graph
 	 */
@@ -85,7 +85,7 @@ public class Node {
 	public Map<String, Integer> getLinks() {
 		return links;
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#hashCode()
 	 */
@@ -93,7 +93,7 @@ public class Node {
 	public int hashCode() {
 		return name.hashCode();
 	}
-
+	
 	/* (non-Javadoc)
 	 * @see java.lang.Object#equals(java.lang.Object)
 	 */
@@ -110,10 +110,8 @@ public class Node {
 		return false;
 	}
 	
+	@Override
 	public String toString() {
 		return name + " " + links;
 	}
-	
-	
-	
 }
