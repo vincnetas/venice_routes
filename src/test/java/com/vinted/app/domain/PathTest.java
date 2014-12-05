@@ -1,4 +1,4 @@
-package com.vinted.app;
+package com.vinted.app.domain;
 
 import static org.junit.Assert.*;
 
@@ -8,6 +8,7 @@ import com.vinted.app.domain.Graph;
 import com.vinted.app.domain.GraphException;
 import com.vinted.app.domain.Node;
 import com.vinted.app.domain.Path;
+import com.vinted.app.domain.PathException;
 
 public class PathTest {
 
@@ -44,7 +45,7 @@ public class PathTest {
 		try {
 			path.add(a);
 			fail("Non neighbor added to graph");
-		} catch (GraphException e) {
+		} catch (PathException e) {
 			
 		}
 	}

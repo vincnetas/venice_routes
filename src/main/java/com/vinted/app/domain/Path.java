@@ -35,15 +35,21 @@ public class Path implements Comparable<Path> {
 	}
 	
 	/**
-	 * Adds node to path and increases path's length. Only neighbor of last node can be added to path.
+	 * Adds node to path and increases path's length. Only neighbor of last node
+	 * can be added to path.
 	 * 
 	 * @param node
+	 * @throws PathException
+	 *             if adding a node which does not have a edge to last node on
+	 *             the path. Unchecked exception, as most of the time this
+	 *             functionality is used internally, and nodes added are the
+	 *             ones that have a edge to last node.
 	 */
-	public void add(Node node) {
+	public void add(Node node) throws PathException {
 		if (!nodes.isEmpty()) {
 			int distance = getLast().distanceTo(node.getName());
 			if (distance == -1) {
-				throw new GraphException("Only neighbor of last node can be added to path " + getLast());
+				throw new PathException("Only neighbor of last node can be added to path " + getLast());
 			}
 			
 			pathLength += distance;
