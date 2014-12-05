@@ -8,6 +8,18 @@ public class Graph {
 
 	private Map<String, Node> nodes = new HashMap<String, Node>();
 	
+	/**
+	 * Constructs a graph from input text. Data is made from edge definitions
+	 * separated by comma, edge is defined by [node][node][weight]. [node] is a
+	 * one letter identifier of node, and [weight] is a number representing edge
+	 * weight. AB10, EF9, etc...
+	 * 
+	 * @param input
+	 *            Graph input data
+	 * @return
+	 * @throws GraphException
+	 *             if there is error in input data
+	 */
 	public static Graph buildGraph(String input) throws GraphException {
 		Graph graph = new Graph();
 		
