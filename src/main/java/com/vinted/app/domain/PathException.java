@@ -1,6 +1,6 @@
 package com.vinted.app.domain;
 
-public class PathException extends Error {
+public class PathException extends RuntimeException {
 
 	/**
 	 * 

@@ -59,5 +59,4 @@ public class Main {
 		System.out.println("#9: " + pathFinder.shortestPath("B", "B").getPathLength());
 		System.out.println("#10: " + pathFinder.getPathsUnder("C", "C", 30).size());
 	}
-
 }

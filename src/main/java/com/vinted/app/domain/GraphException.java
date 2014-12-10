@@ -1,6 +1,6 @@
 package com.vinted.app.domain;
 
-public class GraphException extends Throwable {
+public class GraphException extends Exception {
 
 	/**
 	 * 
